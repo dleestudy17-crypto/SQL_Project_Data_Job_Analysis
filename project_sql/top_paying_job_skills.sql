@@ -5,15 +5,15 @@
   Project : Data Job Market Analysis for College Students
 ===============================================================
 
-  Question: What are the top-paying remote Data Analyst jobs,
+  Question: What are the top-paying Data Analyst jobs,
             and what skills do they require?
 
   Approach:
-    - Pulls the top 100 highest-paying remote Data Analyst roles
+    - Pulls the top 100 highest-paying remote/On-site Data Analyst roles
     - Uses STRING_AGG to consolidate all required skills into
       one clean row per job instead of repeating the job
     - Adds student-friendly context: degree requirement,
-      health insurance, work location type, and skill categories
+      health insurance, Remote or On-site, and skill categories
     - CASE statements convert TRUE/FALSE values into readable labels
 
   Why?
@@ -26,13 +26,12 @@
 ===============================================================
 */
 
--- Identifies the top 100 highest-paying remote Data Analyst roles
+-- Identifies the top 100 highest-paying remote/On-site Data Analyst roles with more information regarding their degree requirements and health insurance
 -- and the skills required to land them
 WITH top_paying_jobs AS (
     SELECT
         job_postings_fact.job_id,
         job_postings_fact.job_title,
-        job_postings_fact.job_location,
         job_postings_fact.job_schedule_type,
         CASE
             WHEN job_postings_fact.job_work_from_home = TRUE THEN 'Remote'
@@ -69,7 +68,6 @@ SELECT
     top_paying_jobs.job_id,
     top_paying_jobs.company_name,
     top_paying_jobs.job_title,
-    top_paying_jobs.job_location,
     top_paying_jobs.job_schedule_type,
     top_paying_jobs.work_location_type,
     top_paying_jobs.degree_requirement,
@@ -86,7 +84,6 @@ GROUP BY
     top_paying_jobs.job_id,
     top_paying_jobs.company_name,
     top_paying_jobs.job_title,
-    top_paying_jobs.job_location,
     top_paying_jobs.job_schedule_type,
     top_paying_jobs.work_location_type,
     top_paying_jobs.degree_requirement,
