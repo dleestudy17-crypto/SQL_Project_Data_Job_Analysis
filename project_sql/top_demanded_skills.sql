@@ -19,7 +19,6 @@ FROM
 WHERE
   -- Filters job titles for 'Data Analyst' roles
     job_postings_fact.job_title_short = 'Data Analyst'
-    AND job_work_from_home = True -- optional to filter for remote jobs
 GROUP BY
   skills_dim.skills
 ORDER BY
