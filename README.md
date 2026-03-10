@@ -107,7 +107,7 @@ ORDER BY
 
 The highest-paying Data Analyst positions exceed $180K+ annually, showing that analytics roles can reach compensation levels comparable to other advanced technical careers.
 
-![Top Paying Roles](assets\top_paying_roles_data_analyst.png)
+![Top Paying Roles](assets/top_paying_roles_data_analyst.png)
 
 *Bar chart showing the highest salaries among the top Data Analyst roles.*
 
@@ -116,7 +116,7 @@ The highest-paying Data Analyst positions exceed $180K+ annually, showing that a
 
 High-paying jobs frequently require SQL, Python, and data visualization tools, reinforcing that strong technical and analytical skills are essential for higher salaries.
 
-![Most Common Skills](assets\most_common_skills_data_analyst.png)
+![Most Common Skills](assets/most_common_skills_data_analyst.png)
 
 *Bar chart showing the most common skills required in the top-paying Data Analyst roles.*
 
