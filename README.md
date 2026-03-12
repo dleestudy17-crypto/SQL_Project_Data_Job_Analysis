@@ -166,7 +166,7 @@ ORDER BY
 LIMIT 100;
 ```
 
-## 📊 Results
+## 📊 Output
 
 | # | Company | Job Title | Salary | Skills | Location | Degree | Health Insurance |
 |:-:|---------|-----------|:------:|--------|:--------:|:------:|:---------------:|
@@ -307,7 +307,7 @@ The typical high-value analytics stack includes:
 > These roles show that **demonstrated skills and experience can sometimes outweigh formal degree requirements**.
 
 
-## 🎯 Key Takeaways for Students
+## 🎯 Key Takeaways 
 
 Several clear patterns emerge from the data:
 
@@ -383,7 +383,7 @@ ORDER BY
 LIMIT 5;
 ```
 
-## 📈 Results: Top 5 Most Requested Skills (Global)
+## 📈 Output: Top 5 Most Requested Skills (Global)
 
 | Rank | Skill    | Job Postings | % of SQL Demand |
 |:----:|----------|-------------:|:---------------:|
@@ -466,7 +466,7 @@ HAVING
 ORDER BY
     avg_salary DESC;
 ```
-## 📊 Results
+## 📉 Output
 
 | Job Title | Avg Salary | Min Salary | Max Salary | Job Demand | Required Skills |
 |-----------|:---------:|:---------:|:---------:|:---------:|----------------|
@@ -520,7 +520,7 @@ ORDER BY
 ### Here is a breakdown of required skills by job titles:
 
 > - **Python and Tableau** appear across nearly every role, making them two of the most consistent technical skills required for early career data analysts.
-- Junior level positions typically require **a broader and more technical skill stack**, frequently including tools such as Docker, Kubernetes, TensorFlow, and C++. This suggests that higher paying junior roles often involve responsibilities closer to **data engineering or advanced analytics workflows**.
+> - Junior level positions typically require **a broader and more technical skill stack**, frequently including tools such as Docker, Kubernetes, TensorFlow, and C++. This suggests that higher paying  junior roles often involve responsibilities closer to **data engineering or advanced analytics workflows**.
 > - In contrast, more accessible titles such as **Entry Level Data Analyst** generally focus on a smaller foundational toolset consisting of **SQL, Excel, Python, Tableau, Power BI, and Google Sheets**.
 > - For students beginning their analytics journey, the most practical starting stack is **SQL, Python, Excel, and Tableau**, followed by cloud platforms and engineering tools as technical experience grows.
 
@@ -654,7 +654,7 @@ ORDER BY
     entry_level_avg_salary DESC
 LIMIT 25;
 ```
-## 📊 Results
+## 📉 Output
 
 | Skill | Entry-Level Demand | Total Market Demand | Entry-Level Avg Salary | Market Avg Salary | Salary Gap | Verdict |
 |-------|:-----------------:|:-------------------:|:----------------------:|:-----------------:|:----------:|---------|
