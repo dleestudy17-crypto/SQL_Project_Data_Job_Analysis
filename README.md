@@ -29,7 +29,7 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 # The Analysis
 Each query targets a specific question college students face when entering the data analytics job market. Here's how I approached each one:
 
-## 1. Top Paying Data Analyst Jobs with Required Skills
+## 1. Top Paying Data Analyst Jobs with Required Skills in the United States (2023-2025)
 This analysis explores the **highest-paying Data Analyst roles in the United States**, the **most in-demand skills required to land them**, **work location**, **degree requirements**, **health insurance** using job posting data from **2023–2025**.
 
 ```sql
@@ -124,11 +124,56 @@ ORDER BY
 LIMIT 100;
 ```
 
-## 📊 Top 20 Highest-Paid Data Analyst Roles out of 100 roles
+## 📊 Results
+
+| # | Company | Job Title | Salary | Skills | Location | Degree | Health Insurance |
+|:-:|---------|-----------|:------:|--------|:--------:|:------:|:---------------:|
+| 1 | Akraya Inc | Data Analyst w/ Digital Advertising | $569,500 | `looker` `power bi` `python` `sql` `tableau` | On-Site | Not Required | No |
+| 2 | Yoh | Power BI Data Analyst | $510,000 | `mysql` `power bi` `snowflake` | On-Site | Not Required | Yes |
+| 3 | MassGenics | VMO Data Consultant V | $450,000 | `excel` `sql` | On-Site | Not Required | Yes |
+| 4 | Netflix | Analytics Engineer – Playback Data (L5) | $445,000 | `go` `python` `scala` `sql` `typescript` | Remote | Required | Yes |
+| 5 | Netflix | Analytics Engineer – Live QoE (L5) | $445,000 | `python` `sql` | Remote | Not Required | Yes |
+| 6 | Torc Robotics | Director of Safety Data Analysis | $375,000 | `airflow` `excel` `matlab` `power bi` `python` `r` `sas` `spark` `sql` `tableau` | On-Site | Required | Yes |
+| 7 | Illuminate Mission Solutions | HC Data Analyst, Senior | $375,000 | `excel` `python` `r` `tableau` `vba` | On-Site | Required | No |
+| 8 | Citigroup | Head of Infra Mgmt & Data Analytics | $375,000 | `excel` `word` | On-Site | Required | No |
+| 9 | Care.com | Head of Data Analytics | $350,000 | `bigquery` `looker` `power bi` `python` `r` `snowflake` `sql` `tableau` | On-Site | Required | Yes |
+| 10 | Anthropic | Data Analyst | $350,000 | `python` `sql` | On-Site | Not Required | Yes |
+| 11 | Advocates Legal Recruiting | Associate – Data, Privacy & Cybersecurity | $325,000 | `gdpr` | On-Site | Not Required | Yes |
+| 12 | beBeeDataScience | Analytics Expert | $315,000 | `python` `sql` | On-Site | Not Required | No |
+| 13 | beBeeData | Platform Performance Data Analyst | $315,000 | `python` `sql` | On-Site | Required | No |
+| 14 | Storm2 | Quantitative Engineer | $315,000 | `airflow` `aws` `docker` `mysql` `numpy` `pandas` `python` `scikit-learn` `terraform` | On-Site | Required | No |
+| 15 | beBeeDataAnalyst | Unlock Business Potential as a Data Analyst | $310,000 | `python` `scala` `spark` `sql` | On-Site | Not Required | Yes |
+| 16 | Capital One | Applied Researcher II | $305,000 | `aws` `pytorch` | On-Site | Required | Yes |
+| 17 | beBeeDataScientist | Efficient Data Analyst – Advertising | $285,818 | `sql` | On-Site | Required | No |
+| 18 | OpenAI | Research Scientist | $285,000 | `github` | On-Site | Required | Yes |
+| 19 | PwC | Financial Services – Data & Tech Director | $282,500 | `aws` `azure` `flow` `python` `r` `sas` `snowflake` `sql` | On-Site | Required | Yes |
+| 20 | Selby Jennings | Data Operations Analyst | $275,000 | `linux` `sql` `sql server` `windows` | On-Site | Required | No |
+| 21 | Odaseva | Product Data Analyst | $275,000 | `excel` `looker` `sql` `tableau` | On-Site | Required | No |
+| 22 | USAA | Exec Dir, Business and Data Analytics | $273,320 | `phoenix` | On-Site | Required | Yes |
+| 23 | OpenAI | Data Visualization Analyst | $270,000 | `looker` `power bi` `python` `react` `sql` `tableau` | On-Site | Not Required | No |
+| 24 | Northrop Grumman | Data Analyst 6 Jobs | $265,000 | `python` `sql` `tableau` | On-Site | Required | Yes |
+| 25 | beBeeEmergingTech | Tax Data Analyst – Emerging Tech | $264,000 | `power bi` `sharepoint` `sql` `sql server` | On-Site | Required | Yes |
+
+⋮
+
+*Table showing the top 100 highest-paying U.S. Data Analyst roles sorted by average annual salary (2023–2025) · Showing 25 of 100 rows*
+
+
+## 📊 Top 20 Highest-Paid Data Analyst Roles out of 100 Roles (Director & Senior Level)
 
 ![Top Paying Roles](assets/Top_20_roles_data_analysts.png)
 
 *Bar chart showing the top 20 highest-paid Data Analyst roles by average annual salary.*
+
+---
+
+### 💰 Salary Distribution of Top Jobs
+The highest-paying Data Analyst roles reach **$569,500 per year** (Akraya Inc).
+
+* The **top 10 jobs** all exceed **$350,000**
+* Even **rank 20** remains above **$275,000**
+
+This suggests that **senior and director-level analytics roles can compete with software engineering salaries**, particularly in tech and finance.
 
 ---
 
@@ -222,14 +267,6 @@ While most high-paying roles still expect a degree, **nearly one-third do not ex
 
 > These roles show that **demonstrated skills and experience can sometimes outweigh formal degree requirements**.
 
-### 💰 Salary Distribution of Top Jobs
-The highest-paying Data Analyst roles reach **$569,500 per year** (Akraya Inc).
-
-* The **top 10 jobs** all exceed **$350,000**
-* Even **rank 20** remains above **$275,000**
-
-This suggests that **senior and director-level analytics roles can compete with software engineering salaries**, particularly in tech and finance.
-
 
 ## 🎯 Key Takeaways for Students
 
@@ -258,84 +295,84 @@ A strong portfolio, certifications, and project experience can significantly off
 Despite the growth of remote work, **the highest-paying analytics roles remain largely on-site**, particularly in tech and financial institutions.
 
 
+## 2. In-Demand Skills for Data Analyst Roles Worldwide
 
-## 2. In-Demand Skills for Data Analysts
+This analysis identifies **the most frequently requested skills in Data Analyst job postings across all countries**, providing a global perspective on what employers consistently look for in data analyst candidates.
 
-This analysis identifies **the most frequently requested skills in Data Analyst job postings in United States**, helping highlight the technologies candidates should prioritize when preparing for analytics roles.
-
-The query aggregates skill demand across thousands of job listings and compares each skill’s demand relative to **SQL**, which serves as the industry baseline.
+The query aggregates skill demand across hundreds of thousands of job listings worldwide and compares each skill's demand relative to **SQL**, which serves as the industry baseline.
 
 ```sql
 SELECT
-  skills_dim.skills,
-  COUNT(skills_job_dim.job_id) AS demand_count
+    skills_dim.skills,
+    COUNT(skills_job_dim.job_id) AS demand_count,
+    CASE
+        WHEN skills_dim.skills = 'sql'
+            THEN '100% (baseline)'
+        ELSE
+            CONCAT(
+                ROUND(
+                    COUNT(skills_job_dim.job_id) * 100.0 /
+                        (
+                            SELECT COUNT(sql_skills_job.job_id)
+                            FROM job_postings_fact AS sql_postings
+                            INNER JOIN skills_job_dim AS sql_skills_job
+                                ON sql_postings.job_id = sql_skills_job.job_id
+                            INNER JOIN skills_dim AS sql_skills
+                                ON sql_skills_job.skill_id = sql_skills.skill_id
+                            WHERE sql_postings.job_title_short ILIKE 'Data Analyst'
+                            AND sql_skills.skills = 'sql'
+                        ),
+                0), '%' 
+            )
+    END AS pct_of_sql_demand
+
 FROM
-  job_postings_fact
-  INNER JOIN
-    skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
-  INNER JOIN
-    skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+    job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+    INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+
 WHERE
-    job_postings_fact.job_title_short = 'Data Analyst'
-    AND job_postings_fact.job_country = 'United States'
+    job_postings_fact.job_title_short ILIKE 'Data Analyst'
+
 GROUP BY
-  skills_dim.skills
+    skills_dim.skills
 ORDER BY
-  demand_count DESC
+    demand_count DESC
 LIMIT 5;
 ```
 
-## 📈 Top 5 Most Requested Skills
+## 📈 Results: Top 5 Most Requested Skills (Global)
 
-Rank | Skill   | Mentioned In Job Postings | % of SQL Demand |
------| ------- | ------------ | --------------- |
-1    | SQL     | 77,619       | 100% (baseline) |
-2    | Excel   | 61,794       | 80%             |
-3    | Python  | 45,017       | 58%             |
-4    | Tableau | 42,978       | 55%             |
-5    | Power BI| 30,514       | 39%             |
+| Rank | Skill    | Job Postings | % of SQL Demand |
+|:----:|----------|-------------:|:---------------:|
+| 1    | SQL      | 198,761      | 100% (baseline) |
+| 2    | Excel    | 144,995      | 73%             |
+| 3    | Python   | 128,946      | 65%             |
+| 4    | Tableau  | 99,062       | 50%             |
+| 5    | Power BI | 94,631       | 48%             |
 
-*Table showing the demand for the top 5 skills in Data Analyst job postings.*
+*Table showing the most common skills required in Data Analyst job postings globally.*
 
-> **SQL is the most in-demand skill** appearing in 77K+ postings — nearly 3x more than Power BI.
+> **SQL dominates globally** appearing in nearly 200,000 postings, more than any other skill by a wide margin.
 
-> **Excel is far from dead** — at 80% of SQL's demand, it remains a core skill in most analyst roles.
+> **Excel remains essential worldwide** at 73% of SQL's demand, confirming it is a universal workplace tool across industries and countries.
 
-> **Python and Tableau are nearly tied**, suggesting visualization skills are just as valued as programming.
+> **Python and Tableau are both highly valued** at 65% and 50% of SQL's demand, suggesting programming and visualization skills are equally important globally.
 
-> **Tableau dominates over Power BI** — learn Tableau first and add Power BI as a secondary skill.
+> **Power BI and Tableau are nearly tied globally**, indicating stronger Power BI adoption in international markets compared to the U.S.
 
-## 🎯 Key Takeaway
+### 🎯 Key Takeaways
 
-### 1️⃣ SQL Is Non-Negotiable
+**SQL is non-negotiable** — appearing in nearly 200,000 postings globally, it is the single most in-demand skill and the foundation for any data analyst role regardless of industry or country.
 
-**SQL appears in nearly 78,000 job postings**, making it the most in-demand skill by a large margin.
+**Excel remains a core workplace tool** — at 73% of SQL's demand, spreadsheet skills are still critical in finance, operations, and reporting workflows worldwide.
 
-For aspiring analysts, **SQL is the single most essential technical skill** and forms the foundation for querying, transforming, and analyzing data.
+**Python and Tableau are both essential** — companies expect analysts to analyze data programmatically and communicate insights visually, making both skills equally important to develop.
 
-### 2️⃣ Excel Remains Extremely Relevant
+**Power BI is more competitive globally than in the U.S.** — nearly matching Tableau at the global level, students targeting multinational companies should consider learning both visualization tools.
 
-Despite being considered an “older” tool, **Excel appears in about 80% as many postings as SQL.**
 
-This highlights that **spreadsheet-based analysis remains a critical part of many business workflows**, especially in finance, operations, and reporting.
-
-### 3️⃣ Python vs Tableau Is Surprisingly Close
-
-**Python appears in 45K job postings**, while **Tableau appears in ~43K postings**.
-
-The small difference suggests that **data visualization skills are nearly as valuable as programming skills** in many analytics roles.
-
-Companies often expect analysts not only to analyze data but also communicate insights visually.
-
-### 4️⃣ Power BI Shows a Noticeable Drop
-
-**Power BI appears in ~30K postings**, significantly lower than Tableau.
-
-This suggests that **Tableau currently maintains a stronger position as the dominant visualization tool** in many analytics job postings.
-
----
-
-## 3. Entry-Level, Associate & Junior Data Analyst Jobs — Salary & Skills
+## 3. Entry-Level, Associate & Junior Data Analyst Jobs in the United States — Salary & Skills
 
 To help students understand **what to expect when entering the data analytics field**, this query identifies real U.S. job postings with entry-level, associate, or junior titles, showing what each role pays and what skills employers actually require.
 
@@ -345,9 +382,9 @@ SELECT
     ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
     ROUND(MIN(job_postings_fact.salary_year_avg), 0)        AS min_salary,
     ROUND(MAX(job_postings_fact.salary_year_avg), 0)        AS max_salary,
+    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand,
     STRING_AGG(DISTINCT skills_dim.skills, ' | '
-        ORDER BY skills_dim.skills)                         AS required_skills,
-    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand
+        ORDER BY skills_dim.skills)                         AS required_skills
 FROM
     job_postings_fact
     INNER JOIN skills_job_dim ON job_postings_fact.job_id  = skills_job_dim.job_id
@@ -368,6 +405,24 @@ HAVING
 ORDER BY
     avg_salary DESC;
 ```
+### 📊 Results
+
+| Job Title | Avg Salary | Min Salary | Max Salary | Job Demand | Required Skills |
+|-----------|:---------:|:---------:|:---------:|:---------:|----------------|
+| Junior Data Analyst | $102,569 | $80,000 | $115,000 | 24 | `c++` `databricks` `docker` `excel` `flow` `github` `java` `javascript` `jenkins` `kubernetes` `oracle` `python` `sas` `spring` `tableau` `tensorflow` |
+| Junior Data Scientist/Data Analyst | $100,565 | $100,000 | $105,000 | 29 | `c++` `docker` `java` `javascript` `jenkins` `python` `sas` `spring` `tableau` |
+| junior data scientist/Data Analyst | $99,649 | $72,000 | $120,000 | 49 | `c++` `docker` `excel` `github` `java` `javascript` `jenkins` `kubernetes` `python` `pytorch` `sas` `spring` `tableau` `tensorflow` |
+| Junior Data Analyst/Engineer/Scientist | $96,466 | $70,000 | $110,000 | 11 | `c++` `databricks` `docker` `excel` `java` `javascript` `jenkins` `python` `sas` `spring` `tableau` `tensorflow` |
+| Entry Level DA w/ PowerBI | $95,345 | $95,000 | $100,000 | 13 | `c++` `databricks` `docker` `github` `java` `javascript` `jenkins` `python` `sas` `spring` `tableau` `tensorflow` |
+| Technical Analyst - Entry Level | $80,550 | $80,550 | $80,550 | 31 | `c` `looker` `microstrategy` `power bi` `python` `sql` `tableau` |
+| Entry/Junior Level DA/Scientist | $79,680 | $75,000 | $97,500 | 22 | `c++` `databricks` `docker` `github` `java` `javascript` `jenkins` `kubernetes` `oracle` `python` `spring` `tableau` `tensorflow` |
+| Associate Data Analyst | $71,787 | $37,400 | $90,500 | 40 | `alteryx` `azure` `bash` `c#` `docker` `excel` `go` `hadoop` `java` `linux` `looker` `mysql` `oracle` `power bi` `python` `r` `sap` `sas` `sql` `sql server` `tableau` `word` |
+| Entry Level Data Analyst | $67,819 | $42,500 | $97,500 | 66 | `aws` `azure` `databricks` `docker` `excel` `hadoop` `java` `javascript` `kubernetes` `looker` `mysql` `numpy` `oracle` `pandas` `power bi` `python` `r` `sas` `snowflake` `spark` `sql` `tableau` `tensorflow` `vba` |
+| Junior Data Analyst | $63,371 | $35,000 | $147,000 | 140 | `airflow` `alteryx` `aws` `azure` `bigquery` `databricks` `docker` `excel` `github` `go` `hadoop` `java` `javascript` `jenkins` `jira` `kubernetes` `looker` `matlab` `mongodb` `mysql` `nosql` `oracle` `pandas` `power bi` `python` `pytorch` `r` `react` `sas` `scala` `scikit-learn` `sharepoint` `snowflake` `spark` `sql` `sql server` `tableau` `tensorflow` `terraform` `vba` `word` |
+| Entry-Level Data Analyst | $53,245 | $45,000 | $90,000 | 18 | `excel` `power bi` `python` `sheets` `sql` `tableau` |
+| Data Entry Analyst | $51,903 | $43,000 | $52,500 | 13 | `excel` `powerpoint` `word` |
+
+*Table showing entry-level, associate, and junior Data Analyst roles with salary ranges, job demand, and required skills (U.S., 2023–2025) · Sorted by average salary descending*
 
 ## 📊 Average Salary & Range by Job Titles (U.S. 2023-2025)
 
@@ -427,3 +482,186 @@ With 66–140 postings, this is the most accessible title for new graduates. It 
 ### 5️⃣ The Salary Floor Is Lower Than Most Expect
 
 Some entry-level roles start as low as $35,000–$42,500. Always check the min/max range — not just the average — when evaluating offers.
+
+## 4. Optimal Skills for Entry-Level & Intern Data Roles (U.S., 2023–2025)
+
+Now that we have a comprehensive understanding of salary ranges across 
+different role levels and required skills both globally and domestically, 
+this query answers one final question for students: **which skills should 
+I learn first to maximize my chances of getting hired and getting paid well 
+in entry-level and intern data roles?**
+
+To answer this, the query combines four key metrics per skill:
+
+- Entry-level demand
+- Total market demand
+- Entry-level average salary
+- Market-wide average salary
+- Salary gap
+
+Each skill is then assigned a verdict label so students know exactly 
+where to focus their learning effort.
+
+```sql
+WITH skills_demand AS (
+  SELECT
+    skills_dim.skill_id,
+	  skills_dim.skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+  FROM
+    job_postings_fact
+	  INNER JOIN
+	    skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+	  INNER JOIN
+	    skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+  WHERE
+    (
+      job_postings_fact.job_title_short = 'Data Analyst'
+    OR job_postings_fact.job_title_short = 'Data Engineer'
+    OR job_postings_fact.job_title_short = 'Data Scientist'
+    )
+    AND job_country = 'United States'
+	  AND job_postings_fact.salary_year_avg IS NOT NULL
+  GROUP BY
+    skills_dim.skill_id
+),
+average_salary AS (
+  SELECT
+    skills_job_dim.skill_id,
+    AVG(job_postings_fact.salary_year_avg) AS avg_salary
+  FROM
+    job_postings_fact
+	INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+  WHERE
+    ( 
+      job_postings_fact.job_title_short = 'Data Analyst'
+    OR job_postings_fact.job_title_short = 'Data Engineer'
+    OR job_postings_fact.job_title_short = 'Data Scientist'
+    )
+    AND job_country = 'United States'
+	  AND job_postings_fact.salary_year_avg IS NOT NULL
+  GROUP BY
+    skills_job_dim.skill_id
+)
+
+SELECT
+    skills_dim.skills                                AS skill,
+    COUNT(skills_job_dim.job_id)                     AS entry_level_demand,
+    skills_demand.demand_count                       AS total_market_demand,
+    ROUND(AVG(job_postings_fact.salary_year_avg), 0) AS entry_level_avg_salary,
+    ROUND(average_salary.avg_salary, 0)              AS market_avg_salary,
+    ROUND(AVG(job_postings_fact.salary_year_avg) 
+        - average_salary.avg_salary, 0)              AS salary_gap,
+
+    CASE
+        WHEN COUNT(skills_job_dim.job_id) >= 200
+            THEN 'Must-Learn'
+        WHEN COUNT(skills_job_dim.job_id) >= 100 AND AVG(job_postings_fact.salary_year_avg) >= 80000
+            THEN 'High Value'
+        WHEN AVG(job_postings_fact.salary_year_avg) >= 90000
+            THEN 'Advanced / Specialization'
+        ELSE 'Nice to Have'
+    END AS verdict
+
+FROM job_postings_fact
+    INNER JOIN skills_job_dim  ON job_postings_fact.job_id  = skills_job_dim.job_id
+    INNER JOIN skills_dim      ON skills_job_dim.skill_id   = skills_dim.skill_id
+    INNER JOIN skills_demand   ON skills_dim.skill_id       = skills_demand.skill_id
+    INNER JOIN average_salary  ON skills_dim.skill_id       = average_salary.skill_id
+WHERE
+     (
+        job_postings_fact.job_title_short = 'Data Analyst'
+        OR job_postings_fact.job_title_short = 'Data Scientist'
+        OR job_postings_fact.job_title_short = 'Data Engineer'
+    )
+    AND job_postings_fact.salary_year_avg IS NOT NULL
+    AND (
+        job_postings_fact.job_title ILIKE '%entry%'
+        OR job_postings_fact.job_title ILIKE '%Intern%'
+    )
+GROUP BY
+    skills_dim.skills,
+    skills_demand.demand_count,
+    average_salary.avg_salary
+HAVING
+    COUNT(skills_job_dim.job_id) > 10
+ORDER BY
+    entry_level_demand DESC,
+    entry_level_avg_salary DESC
+LIMIT 25;
+```
+### 📊 Results
+
+| Skill | Entry-Level Demand | Total Market Demand | Entry-Level Avg Salary | Market Avg Salary | Salary Gap | Verdict |
+|-------|:-----------------:|:-------------------:|:----------------------:|:-----------------:|:----------:|---------|
+| python | 592 | 24,363 | $83,965 | $134,250 | -$50,285 | Must-Learn |
+| sql | 434 | 24,595 | $75,873 | $126,048 | -$50,175 | Must-Learn |
+| tableau | 341 | 9,529 | $80,510 | $114,775 | -$34,265 | Must-Learn |
+| excel | 259 | 10,073 | $67,575 | $94,973 | -$27,398 | Must-Learn |
+| sas | 236 | 3,144 | $87,545 | $112,904 | -$25,358 | Must-Learn |
+| java | 231 | 4,581 | $90,245 | $136,564 | -$46,319 | Must-Learn |
+| power bi | 224 | 6,697 | $72,594 | $108,162 | -$35,569 | Must-Learn |
+| r | 217 | 10,078 | $85,323 | $128,394 | -$43,071 | Must-Learn |
+| tensorflow | 158 | 2,518 | $86,685 | $144,032 | -$57,347 | High Value |
+| javascript | 155 | 1,716 | $88,698 | $114,393 | -$25,695 | High Value |
+| c++ | 150 | 1,635 | $93,110 | $125,969 | -$32,859 | High Value |
+| spring | 129 | 788 | $91,150 | $111,430 | -$20,280 | High Value |
+| docker | 113 | 1,989 | $91,838 | $133,952 | -$42,113 | High Value |
+| jenkins | 110 | 1,138 | $92,205 | $123,531 | -$31,326 | High Value |
+| oracle | 107 | 2,645 | $88,239 | $121,177 | -$32,938 | High Value |
+| databricks | 89 | 3,508 | $87,532 | $135,404 | -$47,872 | Nice to Have |
+| azure | 86 | 6,657 | $83,863 | $134,351 | -$50,488 | Nice to Have |
+| powerpoint | 74 | 1,991 | $60,011 | $96,462 | -$36,451 | Nice to Have |
+| github | 69 | 1,470 | $90,209 | $125,468 | -$35,259 | Advanced / Specialization |
+| spark | 69 | 5,976 | $86,942 | $148,309 | -$61,367 | Nice to Have |
+| aws | 62 | 8,059 | $91,276 | $141,615 | -$50,339 | Advanced / Specialization |
+| word | 60 | 2,341 | $59,043 | $93,339 | -$34,295 | Nice to Have |
+| sql server | 53 | 2,290 | $79,233 | $111,993 | -$32,761 | Nice to Have |
+| hadoop | 45 | 3,318 | $81,556 | $144,379 | -$62,824 | Nice to Have |
+| looker | 45 | 1,401 | $78,313 | $130,453 | -$52,140 | Nice to Have |
+
+*Table showing the top 25 optimal skills for entry-level and intern data roles in the U.S. (2023–2025), sorted by entry-level demand.*
+
+## 🎯 Demand vs. Average Salary — Entry-Level & Intern Roles (U.S.)
+
+![Demand vs. Average Salary](assets/Demand_vs_Average_Salary.png)
+
+*The scatter plot showing the relationship between entry-level demand and average salary per skill, where dot size represents total market demand and color indicates the verdict label (Must-Learn, High Value, Advanced/Specialization, Nice to Have).*
+
+> **Python, SQL, and Tableau dominate entry-level demand** with 592, 434, and 341 postings respectively, making them the three highest priority skills for students to learn first.
+
+> **A broader foundational stack is expected from day one** with 8 Must-Learn skills all appearing in 200 or more entry-level postings including Excel, SAS, Java, Power BI, and R.
+
+> **Every entry-level salary sits below market rate** with gaps ranging from $20K to $62K, confirming that the first role is a stepping stone rather than a salary ceiling.
+
+## 🎯 Key Takeaways
+
+### 1️⃣ Start With Python and SQL
+
+Python and SQL appear in 592 and 434 entry-level postings respectively, making them the two highest priority skills for any student entering a data role.
+
+Mastering these two alone covers the majority of entry-level job requirements.
+
+### 2️⃣ A Broad Foundational Stack Is Expected From Day One
+
+Eight skills including Tableau, Excel, SAS, Java, Power BI, and R all appear in 200 or more entry-level postings.
+
+Students should not stop at Python and SQL — employers expect a well-rounded skill set even at the entry level.
+
+### 3️⃣ Higher Pay Comes With a More Technical Stack
+
+Tools like Docker, Jenkins, C++, and Spring average $91K to $93K at entry level but appear in only 110 to 150 postings.
+
+These are strong second-stage learning goals once the foundational stack is solid.
+
+### 4️⃣ Every Entry-Level Salary Sits Below Market Rate
+
+Salary gaps range from $20K to $62K compared to the broader market, meaning entry-level pay is significantly lower than what experienced professionals earn for the same skills.
+
+Students should treat the first role as a launching pad rather than a salary ceiling.
+
+### 5️⃣ AWS and GitHub Are Worth Learning Later
+
+Both pay above $90K at entry level but appear in fewer than 70 postings, categorizing them as Advanced skills.
+
+Prioritize the core stack first and add cloud and version control skills once the fundamentals are covered.

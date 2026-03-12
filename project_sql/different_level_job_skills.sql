@@ -34,9 +34,9 @@ SELECT
     ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
     ROUND(MIN(job_postings_fact.salary_year_avg), 0)        AS min_salary,
     ROUND(MAX(job_postings_fact.salary_year_avg), 0)        AS max_salary,
+    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand,
     STRING_AGG(DISTINCT skills_dim.skills, ' | '
-        ORDER BY skills_dim.skills)                         AS required_skills,
-    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand
+        ORDER BY skills_dim.skills)                         AS required_skills
 FROM
     job_postings_fact
     INNER JOIN skills_job_dim ON job_postings_fact.job_id  = skills_job_dim.job_id
