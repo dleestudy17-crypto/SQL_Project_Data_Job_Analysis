@@ -31,7 +31,6 @@
 -- by average salary, filtered to skills appearing in 10+ postings
 SELECT
     skills_dim.skills                                       AS skill,
-    skills_dim.type                                         AS skill_category,
     job_postings_fact.job_title                             AS job_title,
     COUNT(job_postings_fact.job_id)                         AS job_demand,
     ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
@@ -43,6 +42,7 @@ FROM
     INNER JOIN skills_dim     ON skills_job_dim.skill_id   = skills_dim.skill_id
 WHERE
     job_postings_fact.job_title_short = 'Data Analyst'
+    AND job_postings_fact.job_country = 'United States'
     AND job_postings_fact.salary_year_avg IS NOT NULL
     AND (
         job_postings_fact.job_title ILIKE '%entry%'
@@ -58,3 +58,31 @@ ORDER BY
     avg_salary DESC,
     job_demand DESC;
 
+-- Fixed Code
+SELECT
+    job_postings_fact.job_title                             AS job_title,
+    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand,
+    ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
+    ROUND(MIN(job_postings_fact.salary_year_avg), 0)        AS min_salary,
+    ROUND(MAX(job_postings_fact.salary_year_avg), 0)        AS max_salary,
+    STRING_AGG(DISTINCT skills_dim.skills, ' | '
+        ORDER BY skills_dim.skills)                         AS required_skills
+FROM
+    job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id  = skills_job_dim.job_id
+    INNER JOIN skills_dim     ON skills_job_dim.skill_id   = skills_dim.skill_id
+WHERE
+    job_postings_fact.job_title_short = 'Data Analyst'
+    AND job_postings_fact.job_country = 'United States'
+    AND job_postings_fact.salary_year_avg IS NOT NULL
+    AND (
+        job_postings_fact.job_title ILIKE '%entry%'
+        OR job_postings_fact.job_title ILIKE '%associate%'
+        OR job_postings_fact.job_title ILIKE '%junior%'
+    )
+GROUP BY
+    job_postings_fact.job_title
+HAVING
+    COUNT(DISTINCT job_postings_fact.job_id) >= 10
+ORDER BY
+    avg_salary DESC;

@@ -29,7 +29,7 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 # The Analysis
 Each query targets a specific question college students face when entering the data analytics job market. Here's how I approached each one:
 
-### 1. Top Paying Data Analyst Jobs with Required Skills
+## 1. Top Paying Data Analyst Jobs with Required Skills
 To identify the **highest-paying Data Analyst roles**, I created a query that selects the **top 100 jobs by average yearly salary** from the lowest to the hightest and connects them to the skills required for each position.
 
 The query first uses a **CTE (`top_paying_jobs`)** to filter roles with salary data and rank them from highest to lowest pay. It also adds useful context such as **work location (Remote vs On-Site), degree requirements, and health insurance availability**.
@@ -238,9 +238,8 @@ While most high-paying roles still expect a degree, **nearly one-third do not ex
 
 These roles show that **demonstrated skills and experience can sometimes outweigh formal degree requirements**.
 
----
 
-# 🎯 Key Takeaways for Students
+## 🎯 Key Takeaways for Students
 
 Several clear patterns emerge from the data:
 
@@ -266,14 +265,72 @@ A strong portfolio, certifications, and project experience can significantly off
 
 Despite the growth of remote work, **the highest-paying analytics roles remain largely on-site**, particularly in tech and financial institutions.
 
----
 
-# 🚀 Final Insight
 
-For aspiring data analysts, the path to high-paying roles is clear:
+## 2. In-Demand Skills for Data Analysts
 
-**Master SQL → Learn Python → Build visualization skills → Gain experience with cloud tools → Build a strong portfolio.**
+This analysis identifies **the most frequently requested skills in Data Analyst job postings in United States**, helping highlight the technologies candidates should prioritize when preparing for analytics roles.
 
-Those who combine these skills with real-world projects and business context position themselves strongly for the highest-paying opportunities in the data analytics field.
+The query aggregates skill demand across thousands of job listings and compares each skill’s demand relative to **SQL**, which serves as the industry baseline.
+
+```sql
+SELECT
+  skills_dim.skills,
+  COUNT(skills_job_dim.job_id) AS demand_count
+FROM
+  job_postings_fact
+  INNER JOIN
+    skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+  INNER JOIN
+    skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_postings_fact.job_title_short = 'Data Analyst'
+    AND job_postings_fact.job_country = 'United States'
+GROUP BY
+  skills_dim.skills
+ORDER BY
+  demand_count DESC
+LIMIT 5;
+```
+
+## 📈 Top 5 Most Requested Skills
+
+Rank | Skill   | Mentioned In Job Postings | % of SQL Demand |
+-----| ------- | ------------ | --------------- |
+1    | SQL     | 77,619       | 100% (baseline) |
+2    | Excel   | 61,794       | 80%             |
+3    | Python  | 45,017       | 58%             |
+4    | Tableau | 42,978       | 55%             |
+5    | Power BI| 30,514       | 39%             |
+
+*Table showing the demand for the top 5 skills in Data Analyst job postings.*
+
+## 🎯 Key Takeaway
+
+### 1️⃣ SQL Is Non-Negotiable
+
+**SQL appears in nearly 78,000 job postings**, making it the most in-demand skill by a large margin.
+
+For aspiring analysts, **SQL is the single most essential technical skill** and forms the foundation for querying, transforming, and analyzing data.
+
+### 2️⃣ Excel Remains Extremely Relevant
+
+Despite being considered an “older” tool, **Excel appears in about 80% as many postings as SQL.**
+
+This highlights that **spreadsheet-based analysis remains a critical part of many business workflows**, especially in finance, operations, and reporting.
+
+### 3️⃣ Python vs Tableau Is Surprisingly Close
+
+**Python appears in 45K job postings**, while **Tableau appears in ~43K postings**.
+
+The small difference suggests that **data visualization skills are nearly as valuable as programming skills** in many analytics roles.
+
+Companies often expect analysts not only to analyze data but also communicate insights visually.
+
+### 4️⃣ Power BI Shows a Noticeable Drop
+
+**Power BI appears in ~30K postings**, significantly lower than Tableau.
+
+This suggests that **Tableau currently maintains a stronger position as the dominant visualization tool** in many analytics job postings.
 
 ---
