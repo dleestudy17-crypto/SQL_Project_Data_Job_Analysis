@@ -1,6 +1,6 @@
 /*
 ===============================================================
-  File    : top_paying_skills.sql
+  File    : different_level_job_skills.sql
   Author  : Donghwan (Dylan) Lee
   Project : Data Job Market Analysis for College Students
 ===============================================================
@@ -27,46 +27,16 @@
 ===============================================================
 */
 
--- Returns entry-level and associate Data Analyst skills ranked
+-- Returns entry-level, associate, junior Data Analyst skills ranked
 -- by average salary, filtered to skills appearing in 10+ postings
 SELECT
-    skills_dim.skills                                       AS skill,
     job_postings_fact.job_title                             AS job_title,
-    COUNT(job_postings_fact.job_id)                         AS job_demand,
-    ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
-    ROUND(MIN(job_postings_fact.salary_year_avg), 0)        AS min_salary,
-    ROUND(MAX(job_postings_fact.salary_year_avg), 0)        AS max_salary
-FROM
-    job_postings_fact
-    INNER JOIN skills_job_dim ON job_postings_fact.job_id  = skills_job_dim.job_id
-    INNER JOIN skills_dim     ON skills_job_dim.skill_id   = skills_dim.skill_id
-WHERE
-    job_postings_fact.job_title_short = 'Data Analyst'
-    AND job_postings_fact.job_country = 'United States'
-    AND job_postings_fact.salary_year_avg IS NOT NULL
-    AND (
-        job_postings_fact.job_title ILIKE '%entry%'
-        OR job_postings_fact.job_title ILIKE '%associate%'
-    )
-GROUP BY
-    skills_dim.skills,
-    skills_dim.type,
-    job_postings_fact.job_title
-HAVING
-    COUNT(job_postings_fact.job_id) >= 10   -- excludes skills with too few postings to be meaningful
-ORDER BY
-    avg_salary DESC,
-    job_demand DESC;
-
--- Fixed Code
-SELECT
-    job_postings_fact.job_title                             AS job_title,
-    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand,
     ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
     ROUND(MIN(job_postings_fact.salary_year_avg), 0)        AS min_salary,
     ROUND(MAX(job_postings_fact.salary_year_avg), 0)        AS max_salary,
     STRING_AGG(DISTINCT skills_dim.skills, ' | '
-        ORDER BY skills_dim.skills)                         AS required_skills
+        ORDER BY skills_dim.skills)                         AS required_skills,
+    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand
 FROM
     job_postings_fact
     INNER JOIN skills_job_dim ON job_postings_fact.job_id  = skills_job_dim.job_id

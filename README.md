@@ -10,11 +10,11 @@ The dataset comes from Luke Barousse's SQL Course and contains job titles, salar
 
 ### The questions I wanted to answer through my SQL queries were: 
 
-1. top_paying_jobs.sql → What are the top 100 highest-paying remote/on-site Data Analyst jobs in the United States, what skills do they require, and do they offer benefits or waive degree requirements?
+1. top_paying_job_skills.sql → What are the top 100 highest-paying remote/on-site Data Analyst jobs in the United States, what skills do they require, and do they offer benefits or waive degree requirements?
 
-2. top_demanded_skills.sql → Which skills appear most frequently in entry-level, associate, and junior Data Analyst postings — and how do they split between remote and on-site roles?
+2. top_demanded_skills.sql → Overall, which top 5 skills appear most frequently in Data Analyst postings in the United States?
 
-3. top_paying_skills.sql → Among entry-level and associate Data Analyst roles, which skills are associated with the highest average salaries?
+3. different_level_job_skills.sql → What entry-level, associate, and junior Data Analyst job titles exist in the U.S. market, what do they pay, and what skills does each require?
 
 4. optimal_skills.sql → What are the most optimal skills to learn — balancing high demand AND high salary — ranked by a student-friendly verdict label?
 
@@ -30,12 +30,7 @@ For my deep dive into the data analyst job market, I harnessed the power of seve
 Each query targets a specific question college students face when entering the data analytics job market. Here's how I approached each one:
 
 ## 1. Top Paying Data Analyst Jobs with Required Skills
-To identify the **highest-paying Data Analyst roles**, I created a query that selects the **top 100 jobs by average yearly salary** from the lowest to the hightest and connects them to the skills required for each position.
-
-The query first uses a **CTE (`top_paying_jobs`)** to filter roles with salary data and rank them from highest to lowest pay. It also adds useful context such as **work location (Remote vs On-Site), degree requirements, and health insurance availability**.
-
-Finally, the query joins the skills tables and uses **`STRING_AGG`** to combine multiple skills into a single row per job, creating a cleaner dataset that is easier to analyze.
-
+This analysis explores the **highest-paying Data Analyst roles in the United States**, the **most in-demand skills required to land them**, **work location**, **degree requirements**, **health insurance** using job posting data from **2023–2025**.
 
 ```sql
 WITH top_paying_jobs AS (
@@ -128,19 +123,8 @@ ORDER BY
 
 LIMIT 100;
 ```
-## 📊 Key Insights from the Top-Paying Data Analyst Jobs (2023–2025)
 
-This analysis explores the **highest-paying Data Analyst roles** and the **skills required to land them** using job posting data from **2023–2025**.
-
-### 💰 Salary Distribution of Top Jobs
-The highest-paying Data Analyst roles reach **$569,500 per year** (Akraya Inc).
-
-* The **top 10 jobs** all exceed **$350,000**
-* Even **rank 20** remains above **$275,000**
-
-This suggests that **senior and director-level analytics roles can compete with software engineering salaries**, particularly in tech and finance.
-
-### 📊 Top 20 Highest-Paid Data Analyst Roles out of 100 roles
+## 📊 Top 20 Highest-Paid Data Analyst Roles out of 100 roles
 
 ![Top Paying Roles](assets/Top_20_roles_data_analysts.png)
 
@@ -150,7 +134,7 @@ This suggests that **senior and director-level analytics roles can compete with 
 
 ### 🛠️ Most Common Skills in Top 100 Paying Roles
 
-Across the highest-paying positions, **SQL and Python dominate by a wide margin**. They appear together in the majority of high-paying job postings.
+> Across the highest-paying positions, **SQL and Python dominate by a wide margin**. They appear together in the majority of high-paying job postings.
 
 The typical high-value analytics stack includes:
 
@@ -176,7 +160,7 @@ The typical high-value analytics stack includes:
 * Spark
 * Snowflake
 
-### 📊 Most In-Demand Skills in Top 100 Paying Jobs
+## 📊 Most In-Demand Skills in Top 100 Paying Jobs
 
 ![Most Common Skills](assets/Most_common_skills_in_Top_Paying_roles.png)
 
@@ -200,7 +184,7 @@ Remote roles do exist but are rare in this salary tier. Companies offering remot
 * Atlassian
 * Nurp
 
-Overall, the data suggests that **higher compensation is strongly correlated with in-person roles at major technology and finance companies.**
+> Overall, the data suggests that **higher compensation is strongly correlated with in-person roles at major technology and finance companies.**
 
 ---
 
@@ -236,7 +220,15 @@ While most high-paying roles still expect a degree, **nearly one-third do not ex
 | Google       | $254,000 | Partner Technology Manager (Data & AI) |
 | Augment Code | $262,500 | Fraud Data Analyst                     |
 
-These roles show that **demonstrated skills and experience can sometimes outweigh formal degree requirements**.
+> These roles show that **demonstrated skills and experience can sometimes outweigh formal degree requirements**.
+
+### 💰 Salary Distribution of Top Jobs
+The highest-paying Data Analyst roles reach **$569,500 per year** (Akraya Inc).
+
+* The **top 10 jobs** all exceed **$350,000**
+* Even **rank 20** remains above **$275,000**
+
+This suggests that **senior and director-level analytics roles can compete with software engineering salaries**, particularly in tech and finance.
 
 
 ## 🎯 Key Takeaways for Students
@@ -305,6 +297,14 @@ Rank | Skill   | Mentioned In Job Postings | % of SQL Demand |
 
 *Table showing the demand for the top 5 skills in Data Analyst job postings.*
 
+> **SQL is the most in-demand skill** appearing in 77K+ postings — nearly 3x more than Power BI.
+
+> **Excel is far from dead** — at 80% of SQL's demand, it remains a core skill in most analyst roles.
+
+> **Python and Tableau are nearly tied**, suggesting visualization skills are just as valued as programming.
+
+> **Tableau dominates over Power BI** — learn Tableau first and add Power BI as a secondary skill.
+
 ## 🎯 Key Takeaway
 
 ### 1️⃣ SQL Is Non-Negotiable
@@ -334,3 +334,96 @@ Companies often expect analysts not only to analyze data but also communicate in
 This suggests that **Tableau currently maintains a stronger position as the dominant visualization tool** in many analytics job postings.
 
 ---
+
+## 3. Entry-Level, Associate & Junior Data Analyst Jobs — Salary & Skills
+
+To help students understand **what to expect when entering the data analytics field**, this query identifies real U.S. job postings with entry-level, associate, or junior titles, showing what each role pays and what skills employers actually require.
+
+```sql
+SELECT
+    job_postings_fact.job_title                             AS job_title,
+    ROUND(AVG(job_postings_fact.salary_year_avg), 0)        AS avg_salary,
+    ROUND(MIN(job_postings_fact.salary_year_avg), 0)        AS min_salary,
+    ROUND(MAX(job_postings_fact.salary_year_avg), 0)        AS max_salary,
+    STRING_AGG(DISTINCT skills_dim.skills, ' | '
+        ORDER BY skills_dim.skills)                         AS required_skills,
+    COUNT(DISTINCT job_postings_fact.job_id)                AS job_demand
+FROM
+    job_postings_fact
+    INNER JOIN skills_job_dim ON job_postings_fact.job_id  = skills_job_dim.job_id
+    INNER JOIN skills_dim     ON skills_job_dim.skill_id   = skills_dim.skill_id
+WHERE
+    job_postings_fact.job_title_short = 'Data Analyst'
+    AND job_postings_fact.job_country = 'United States'
+    AND job_postings_fact.salary_year_avg IS NOT NULL
+    AND (
+        job_postings_fact.job_title ILIKE '%entry%'
+        OR job_postings_fact.job_title ILIKE '%associate%'
+        OR job_postings_fact.job_title ILIKE '%junior%'
+    )
+GROUP BY
+    job_postings_fact.job_title
+HAVING
+    COUNT(DISTINCT job_postings_fact.job_id) >= 10
+ORDER BY
+    avg_salary DESC;
+```
+
+## 📊 Average Salary & Range by Job Titles (U.S. 2023-2025)
+
+![Salary Range](assets/Data_Analyst_Salary_Range.png)
+
+*Bar chart showing average salary and range by job title (U.S., 2023–2025)*
+
+> Junior Data Analyst roles average **$100K+**, significantly higher than Entry-Level roles at **$53K–$68K** — a gap of up to $50K based on title alone. Notably, Junior Data Analyst has the widest salary range ($35K–$147K), meaning experience and company size heavily influence compensation. Students should target **Junior titles when possible** and avoid confusing "Data Entry Analyst" ($52K, clerical) with a true data analytics role.
+
+## 📈 Required Skills by Job Title
+
+| Job Title | Required Skills |
+|-----------|----------------|
+| Junior Data Analyst | `c++` `databricks` `docker` `excel` `flow` `github` `java` `javascript` `jenkins` `kubernetes` `oracle` `python` `sas` `spring` `tableau` `tensorflow` |
+| Junior Data Scientist/Data Analyst | `c++` `docker` `java` `javascript` `jenkins` `python` `sas` `spring` `tableau` |
+| junior data scientist/Data Analyst | `c++` `docker` `excel` `github` `java` `javascript` `jenkins` `kubernetes` `python` `pytorch` `sas` `spring` `tableau` `tensorflow` |
+| Junior Data Analyst/Engineer/Scientist | `c++` `databricks` `docker` `excel` `java` `javascript` `jenkins` `python` `sas` `spring` `tableau` `tensorflow` |
+| Entry Level DA w/ PowerBI | `c++` `databricks` `docker` `github` `java` `javascript` `jenkins` `python` `sas` `spring` `tableau` `tensorflow` |
+| Technical Analyst - Entry Level | `c` `looker` `microstrategy` `power bi` `python` `sql` `tableau` |
+| Entry/Junior Level Data Analyst/Scientist | `c++` `databricks` `docker` `github` `java` `javascript` `jenkins` `kubernetes` `oracle` `python` `spring` `tableau` `tensorflow` |
+| Associate Data Analyst | `alteryx` `azure` `bash` `c#` `docker` `excel` `go` `hadoop` `java` `linux` `looker` `mysql` `oracle` `power bi` `python` `r` `sap` `sas` `sql` `sql server` `tableau` `word` |
+| Entry Level Data Analyst | `aws` `azure` `databricks` `docker` `excel` `hadoop` `java` `javascript` `kubernetes` `looker` `mysql` `numpy` `oracle` `pandas` `power bi` `python` `r` `sas` `snowflake` `spark` `sql` `tableau` `tensorflow` `vba` |
+| Junior Data Analyst | `airflow` `alteryx` `aws` `azure` `bigquery` `databricks` `docker` `excel` `github` `go` `hadoop` `java` `javascript` `jenkins` `jira` `kubernetes` `looker` `matlab` `mongodb` `mysql` `nosql` `oracle` `pandas` `power bi` `python` `pytorch` `r` `react` `sas` `scala` `scikit-learn` `sharepoint` `snowflake` `spark` `sql` `sql server` `tableau` `tensorflow` `terraform` `vba` `word` |
+| Entry-Level Data Analyst | `excel` `power bi` `python` `sheets` `sql` `tableau` |
+| Data Entry Analyst | `excel` `powerpoint` `word` |
+
+*Skills aggregated across all postings for each title · Sorted by average salary descending*
+
+> **Python and Tableau appear across nearly every role**, making them the two most universal skills regardless of title. Junior roles demand a significantly broader and more technical stack, with tools like `docker`, `kubernetes`, `tensorflow`, and `c++` appearing repeatedly, suggesting that **higher pay comes with higher technical expectations**. 
+
+> In contrast, the most accessible titles like "Entry-Level Data Analyst" require only the core six: `sql` `excel` `python` `tableau` `power bi` `sheets`. Notably, "Data Entry Analyst" requires only `excel` `powerpoint` `word`, confirming it is a clerical role with no overlap with data analytics. For students, the clear starting stack is **SQL, Python, Excel, and Tableau**, then layer in cloud tools and engineering skills to move toward higher-paying Junior titles.
+
+## 🎯 Key Takeaway
+
+### 1️⃣ "Junior" Titles Pay Significantly More Than "Entry-Level"
+
+Junior Data Analyst roles average $100K+, while Entry-Level roles average $53K–$68K.
+
+The title alone can represent a $30K–$40K salary difference — worth targeting when job searching.
+
+### 2️⃣ More Skills = Higher Pay
+
+Top-paying junior roles consistently require a broader technical stack — Python, SQL, and Tableau plus tools like Docker, Kubernetes, and TensorFlow.
+
+Building beyond the basics directly translates to higher compensation.
+
+### 3️⃣ "Data Entry Analyst" Is Not a Data Analytics Role
+
+At ~$52K with only Excel, PowerPoint, and Word required, this is a clerical position.
+
+Students should be careful not to apply to these when targeting analytics roles.
+
+### 4️⃣ "Entry Level Data Analyst" Has the Most Openings
+
+With 66–140 postings, this is the most accessible title for new graduates. It offers the highest volume of opportunities to land your first analytics job.
+
+### 5️⃣ The Salary Floor Is Lower Than Most Expect
+
+Some entry-level roles start as low as $35,000–$42,500. Always check the min/max range — not just the average — when evaluating offers.
