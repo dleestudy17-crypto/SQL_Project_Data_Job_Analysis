@@ -205,7 +205,7 @@ LIMIT 100;
 
 ![Top Paying Roles](assets/Top_20_roles_data_analysts.png)
 
-*Bar chart showing the top 20 highest-paid Data Analyst roles by average annual salary.*
+*Bar chart showing the top 20 highest-paid Data Analyst roles by average annual salary; Claude.ai generated this bar chart from my SQL query results*
 
 ### Here is a breakdown of salary distribution of top jobs:
 
@@ -218,7 +218,7 @@ LIMIT 100;
 
 ![Most Common Skills](assets/Most_common_skills_in_Top_Paying_roles.png)
 
-*Bar chart showing the 15 most frequently required skills across the top-paying Data Analyst roles.*
+*Bar chart showing the 15 most frequently required skills across the top-paying Data Analyst roles; Claude.ai generated this bar chart from my SQL query results*
 
 ### Here is a breakdown of most common skills in top 100 paying roles:
 
@@ -489,7 +489,7 @@ ORDER BY
 
 ![Salary Range](assets/Data_Analyst_Salary_Range.png)
 
-*Bar chart showing average salary and range by job title (U.S., 2023–2025)*
+*Bar chart showing average salary and range by job title (U.S., 2023–2025); Claude.ai generated this bar chart from my SQL query results*
 
 ### Here is a breakdown of annual average salary & range of entry level, associate and junior Data Analyst jobs in the United States:
 
@@ -690,7 +690,7 @@ LIMIT 25;
 
 ![Demand vs. Average Salary](assets/Demand_vs_Average_Salary.png)
 
-*The scatter plot showing the relationship between entry-level demand and average salary per skill, where dot size represents total market demand and color indicates the verdict label (Must-Learn, High Value, Advanced/Specialization, Nice to Have).*
+*The scatter plot showing the relationship between entry-level demand and average salary per skill, where dot size represents total market demand and color indicates the verdict label (Must-Learn, High Value, Advanced/Specialization, Nice to Have); Claude.ai generated this scatter plot from my SQL query results*
 
 ### Here is a breakdown of optimal skills for Entry-Level & Intern Data Roles (U.S., 2023–2025):
 
@@ -826,3 +826,13 @@ For aspiring data analysts, the key takeaway is clear:
 > Building a strong foundation in **SQL, Python, data visualization, and analytical thinking** as early as possible can significantly improve both job opportunities and long-term earning potential.
 
 The data analytics field continues to evolve rapidly, making **continuous learning and skill development essential** for staying competitive in the job market.
+
+**Created by DongHwan(Dylan) Lee**
+
+School of Information Studies
+Information Management & Technology, Syracuse University
+[LinkedIn](www.linkedin.com/in/hellodylanlee)
+
+---
+
+*Last updated: March 2026*
