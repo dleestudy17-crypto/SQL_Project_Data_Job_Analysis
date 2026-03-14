@@ -80,25 +80,18 @@ WITH top_paying_jobs AS (
         job_postings_fact.job_id,
         job_postings_fact.job_title,
         job_postings_fact.job_schedule_type,
-
-        -- identify work location
         CASE
             WHEN job_postings_fact.job_work_from_home = TRUE THEN 'Remote'
             ELSE 'On-Site'
         END AS work_location_type,
-
-        -- identify degree requirement
         CASE
             WHEN job_postings_fact.job_no_degree_mention = TRUE THEN 'No Degree Required'
             ELSE 'Degree Required'
         END AS degree_requirement,
-
-        -- identify health insurance
         CASE
             WHEN job_postings_fact.job_health_insurance = TRUE THEN 'Yes'
             ELSE 'No'
         END AS health_insurance,
-
         job_postings_fact.job_posted_date::DATE AS date_posted,
         job_postings_fact.salary_year_avg,
         company_dim.name AS company_name
@@ -113,14 +106,12 @@ WITH top_paying_jobs AS (
         AND job_postings_fact.salary_year_avg IS NOT NULL
         AND job_postings_fact.job_country = 'United States'
 
-    -- determines which duplicate to keep (most recent posting)
     ORDER BY
         company_dim.name,
         job_postings_fact.job_title,
         job_postings_fact.job_posted_date DESC
 )
 
--- Joins skill data and consolidates multiple skills into one row per job
 SELECT
     top_paying_jobs.job_id,
     top_paying_jobs.company_name,
@@ -132,16 +123,12 @@ SELECT
     top_paying_jobs.date_posted,
     top_paying_jobs.salary_year_avg,
 
-    -- combine skills
     STRING_AGG(DISTINCT skills_dim.skills, ', ' ORDER BY skills_dim.skills) AS skills,
-
-    -- combine skill categories
     STRING_AGG(DISTINCT skills_dim.type, ', ') AS skill_categories
 
 FROM
     top_paying_jobs
 
-    -- keep INNER JOIN because jobs without skills are not useful
     INNER JOIN skills_job_dim
         ON top_paying_jobs.job_id = skills_job_dim.job_id
 
@@ -159,7 +146,6 @@ GROUP BY
     top_paying_jobs.date_posted,
     top_paying_jobs.salary_year_avg
 
--- now rank jobs by salary
 ORDER BY
     top_paying_jobs.salary_year_avg DESC
 
@@ -209,7 +195,7 @@ LIMIT 100;
 
 ### Here is a breakdown of salary distribution of top jobs:
 
-> - The highest paying Data Analyst roles reach **$569,500 per year** at **Akraya Inc**. And The > > **top 10 jobs** all exceed **$350,000**. Even **rank 20** remains above **$275,000**.
+> - The highest paying Data Analyst roles reach **$569,500 per year** at **Akraya Inc**. And The **top 10 jobs** all exceed **$350,000**. Even **rank 20** remains above **$275,000**.
 > - These salaries show that **senior analytics leadership roles can reach compensation levels comparable to software engineering and machine learning positions**, particularly in technology, finance, and AI companies.
 > - This also explains why many of these roles include titles such as **Director, Head of Analytics, Analytics Engineer, or Research Scientist**, indicating that the highest paying "Data Analyst" jobs are often **senior strategic positions rather than entry level analytics roles**.
 
