@@ -195,7 +195,7 @@ LIMIT 100;
 
 ### Here is a breakdown of salary distribution of top jobs:
 
-> - The highest paying Data Analyst roles reach **$569,500 per year** at **Akraya Inc**. And The **top 10 jobs** all exceed **$350,000**. Even **rank 20** remains above **$275,000**.
+> - The highest paying Data Analyst roles reach **$569,500 per year** at **Akraya Inc**. And the **top 10 jobs** all exceed **$350,000**. Even **rank 20** remains above **$275,000**.
 > - These salaries show that **senior analytics leadership roles can reach compensation levels comparable to software engineering and machine learning positions**, particularly in technology, finance, and AI companies.
 > - This also explains why many of these roles include titles such as **Director, Head of Analytics, Analytics Engineer, or Research Scientist**, indicating that the highest paying "Data Analyst" jobs are often **senior strategic positions rather than entry level analytics roles**.
 
