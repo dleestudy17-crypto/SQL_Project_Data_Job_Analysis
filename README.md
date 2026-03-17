@@ -1,19 +1,14 @@
 # Introduction
-🎓 Built for college students breaking into data analytics!
+This project uses SQL to examine thousands of job postings and investigate the actual data analytics job market. The aim is straightforward: to assist students in knowing what skills really matter, what roles are the most lucrative, and where to specialize in their learning before they graduate.
 
-This project explores the real data analytics job market using SQL to analyze thousands of job postings. The goal is simple: help students understand which skills actually matter, what roles pay the most, and where to focus their learning before graduating.
+Through the study of real-world job listings, this project will reveal:
 
-By analyzing real-world job postings, this project uncovers:
+1. Which Data Analyst positions in the U.S. pay the highest salaries.
+2. Which skills appear most frequently in analytics job postings worldwide.
+3. The skills that balance high demand and strong salaries.
+4. The kind of entry-level and junior roles currently required in today's job market.
 
-💰 Which Data Analyst roles pay the highest salaries in the U.S.
-
-🔥 Which skills appear most frequently in analytics job postings worldwide
-
-📈 Which skills balance both high demand and strong salaries
-
-🚀 What entry-level and junior roles actually require in today's job market
-
-Rather than relying on generic advice like “learn SQL and Python,” this analysis uses real job data to identify the most valuable skills and career paths for aspiring data professionals.
+Instead of blanket advice such as “learn SQL and Python,” this analysis relies on real job data to identify the most effective skills and job paths for data professionals who want to build a more impactful career.
 
 🔍 SQL queries used in this project can be found here: [project_sql folder](/project_sql/)
 
@@ -22,11 +17,11 @@ Rather than relying on generic advice like “learn SQL and Python,” this anal
 
 # Background
 
-As a college student studying Information Management and Technology, I wanted to go beyond generic career advice such as “learn SQL and Python.” Instead of relying on broad recommendations, this project analyzes real job postings to answer a more practical question: **what skills do Data Analyst roles actually require and how much do they pay?**
+As I am in college, studying Information Management and Technology, I wanted to do more than give one-size-fits-all career advice such as “learn SQL and Python.” Instead of following broad recommendations, this project analyzes real job postings to answer a more real-world question: **what skills do Data Analyst roles actually require, and how much are they paid?**
 
-The dataset comes from Luke Barousse’s SQL Course and includes job titles, salary information, job locations, and required technical skills. Using SQL, I explored this dataset to identify meaningful patterns in the data analytics job market.
+The dataset was extracted from Luke Barousse’s SQL Course and contains job titles, salary data, job locations, and technical requirements. With SQL, I looked into this dataset to uncover substantive themes in the data analytics job market.
 
-Unlike many similar projects that simply list common skills, this analysis focuses on **salary, demand, and entry level opportunities** so that students preparing to enter the field can understand which skills provide the strongest career advantage.
+While many related projects often only list common skills, this analysis looks specifically at **salary, demand, and entry level opportunities** so that students entering the field can distinguish which skills provide the best competitive advantage.
 
 ### Questions Explored in This Project
 
@@ -61,17 +56,15 @@ The following sections explain the approach and insights generated from each ana
 
 ## 1. Top Paying Data Analyst Jobs with Required Skills in the United States (2023 to 2025)
 
-This analysis identifies the **highest paying Data Analyst roles in the United States** and examines the key characteristics of these positions. Using job posting data from **2023 to 2025**, the query explores several important factors associated with high salary roles.
+Identify the Data Analyst positions with the highest pay in the United States and analyze the important factors associated with these positions. This query analyzes data from **2023 to 2025** to provide insights about some critical aspects related to high salary spots. In particular, the analysis explores:
 
-Specifically, the analysis investigates:
+• Technical skills needed per top-paying position.
+• Type of work location — whether remote or on site
+• If a degree is required or not explicitly mentioned.
+• Access to benefits of health insurance.
+• Salaries for the top paid roles.
 
-• Required technical skills associated with the highest salaries
-• Work location type including remote and on site roles
-• Whether a degree is required or not explicitly mentioned
-• Availability of health insurance benefits
-• Salary levels across the top paying positions
-
-By combining salary data with job requirements and skill information, this query provides a clear view of **what companies expect from candidates applying for the most competitive Data Analyst positions in the U.S.**
+This query provides the users with a very clear image of **what companies expect from candidates applying for the most competitive Data Analyst positions in the U.S.** by combining salary data with job requirements and skill information.
 
 
 ```sql
@@ -187,7 +180,7 @@ LIMIT 100;
 *Table showing the top 100 highest-paying U.S. Data Analyst roles sorted by average annual salary (2023–2025) · Showing 25 of 100 rows*
 
 
-## 📊 Top 20 Highest-Paid Data Analyst Roles out of 100 Roles (Director & Senior Level)
+## Top 20 Highest-Paid Data Analyst Roles out of 100 Roles (Director & Senior Level)
 
 ![Top Paying Roles](assets/Top_20_roles_data_analysts.png)
 
@@ -195,12 +188,12 @@ LIMIT 100;
 
 ### Here is a breakdown of salary distribution of top jobs:
 
-> - The highest paying Data Analyst roles reach **$569,500 per year** at **Akraya Inc**. And the **top 10 jobs** all exceed **$350,000**. Even **rank 20** remains above **$275,000**.
-> - These salaries show that **senior analytics leadership roles can reach compensation levels comparable to software engineering and machine learning positions**, particularly in technology, finance, and AI companies.
-> - This also explains why many of these roles include titles such as **Director, Head of Analytics, Analytics Engineer, or Research Scientist**, indicating that the highest paying "Data Analyst" jobs are often **senior strategic positions rather than entry level analytics roles**.
+> - The highest Data Analyst jobs are paid with **$569,500 per year** at **Akraya Inc**. And all of the **top 10 jobs** are worth more than **$350,000**. Even **rank 20** are above **$275,000**. 
+> - These salaries highlight the fact that **senior analytics leadership roles can command pay equivalent to software engineering and machine learning roles**, particularly within technology, finance, and AI companies. 
+> - Also, this helps understand why a lot of these jobs have titles like **Director, Head of Analytics, Analytics Engineer, or Research Scientist**, as it demonstrates that most of the top salary "Data Analyst" jobs are high quality **senior strategic positions, not entry level analytics** roles.
 
 
-## 📊 Most In-Demand Skills in Top 100 Paying Jobs
+## Most In-Demand Skills in Top 100 Paying Jobs
 
 ![Most Common Skills](assets/Most_common_skills_in_Top_Paying_roles.png)
 
@@ -236,7 +229,7 @@ The typical high-value analytics stack includes:
 
 ---
 
-### 🏢 Work Location Distribution (Top 100 Jobs)
+### Work Location Distribution (Top 100 Jobs)
 
 | Work Location | Percentage |
 | ------------- | ---------- |
@@ -257,7 +250,7 @@ The typical high-value analytics stack includes:
 
 ---
 
-### 🎓 Degree Requirement (Top 100 Jobs)
+### Degree Requirement (Top 100 Jobs)
 
 | Degree Requirement | Percentage |
 | ------------------ | ---------- |
@@ -295,38 +288,26 @@ The typical high-value analytics stack includes:
 
 ## 🎯 Key Takeaways 
 
-Several clear patterns emerge from the data:
+From the data, numerous obvious patterns emerge:
 
-### 1️⃣ SQL and Python Are Non-Negotiable
+1. SQL and Python For Everyone. These two skills are present in **over 70% of top-earning** jobs.
 
-These two skills appear in **over 70% of top-paying roles**.
+2. Visualization skills are key. **Tableau and Power BI** are among the tools that regularly come to mind as the requisite supports.
 
-### 2️⃣ Visualization Skills Are Essential
+3. Competitive Advantage: Cloud & Data Platforms Provide. **Experience with AWS, Azure, Snowflake, and Spark** is common for high paying positions.
 
-Tools such as **Tableau and Power BI** consistently appear as supporting requirements.
+4. Degrees Do Matter, but They don’t account for everything: While **70% of roles require a degree**, about **1 in 3 high-paying positions do not**. Without a formal degree, a thorough portfolio and project experience along with certifications can go a long way in taking up the gap.
 
-### 3️⃣ Cloud & Data Platforms Add Competitive Advantage
-
-Experience with **AWS, Azure, Snowflake, and Spark** is common in higher-paying positions.
-
-### 4️⃣ Degrees Still Matter — But They Are Not Everything
-
-While **70% of roles require a degree**, roughly **1 in 3 top-paying jobs do not**. A strong portfolio, certifications, and project experience can significantly offset the lack of a formal degree.
-
-### 5️⃣ Highest Salaries Are Mostly On-Site
-
-Despite the growth of remote work, **the highest-paying analytics roles remain largely on-site**, particularly in tech and financial institutions.
+5. At present, the highest salaries are mainly earned on-site. Although remote work is on the rise, **the highest-paying analytics jobs are still primarily on-site,** particularly in tech and financial institutions.
 
 
 ## 2. In Demand Skills for Data Analyst Roles Worldwide
 
-This analysis identifies the **most frequently requested technical skills in Data Analyst job postings across the global job market**. By examining job listings from multiple countries, the query highlights which tools and technologies consistently appear in employer requirements.
+This query reveals the **most frequently requested technical skills in Data Analyst job postings across the global job market**. Through a review of job postings across various countries, the ask addresses which tools and technologies are consistently included in employer demands. 
 
-The goal is to understand **which skills form the core foundation of modern data analyst roles worldwide**.
+The aim is to understand **which skills form the core foundation of modern data analyst roles worldwide**. To provide a more substantive comparison, the query will measure the **demand for each skill relative to SQL**, which is widely considered the fundamental language for data analysis. 
 
-To provide a meaningful comparison, the query measures the demand for each skill relative to **SQL**, which is widely considered the fundamental language for data analysis. SQL is used as a **baseline reference point**, allowing other skills to be evaluated based on how frequently they appear in job postings compared to SQL.
-
-Using this approach, the analysis reveals which skills are **essential, complementary, or emerging tools** within the global analytics ecosystem.
+SQL is also utilized as a **baseline reference point**, allowing comparison with other skills in how frequently they appear in job listings relative to SQL. With this strategy, the analysis shows in which areas skills are essential, complementary, or emerging tools globally.
 
 
 ```sql
@@ -369,7 +350,7 @@ ORDER BY
 LIMIT 5;
 ```
 
-## 📈 Output: Top 5 Most Requested Skills (Global)
+## Output: Top 5 Most Requested Skills (Global)
 
 | Rank | Skill    | Job Postings | % of SQL Demand |
 |:----:|----------|-------------:|:---------------:|
@@ -383,28 +364,20 @@ LIMIT 5;
 
 ### Here is a breakdown of top 5 most required skills worldwide:
 
-> - **SQL dominates globally** appearing in nearly 200,000 postings, more than any other skill by a wide margin.
-> - **Excel remains essential worldwide** at 73% of SQL's demand, confirming it is a universal workplace tool across industries and countries.
-> - **Python and Tableau are both highly valued** at 65% and 50% of SQL's demand, suggesting programming and visualization skills are equally important globally.
-> - **Power BI and Tableau are nearly tied globally**, indicating stronger Power BI adoption in international markets compared to the U.S.
+> - **SQL is used the most** more by a huge margin than any other skill, in close to 200,000 postings globally.
+> - **Excel itself remains on top of the list globally and is still a big part of it**, with 73% of all SQL jobs now being for Excel—showing Excel isn’t just for the office, but a workplace tool in every sector and country. 
+> - **Python and Tableau are also well received**, with 65% and 50% of SQL's demand from the two respectively which demonstrates that programming and visualization abilities are universally important. 
+> - Both **Power BI and Tableau** are almost equally used on a global scale, indicating stronger Power BI adoption in international markets compared to the U.S.
 
 ## 🎯 Key Takeaways
 
-### 1️⃣ SQL is non-negotiable
+1. SQL and Python Are Non-Negotiable. SQL appears in nearly 200,000 postings globally, it is the single most in-demand skill and the foundation for any data analyst role regardless of industry or country.
 
- SQL appears in nearly 200,000 postings globally, it is the single most in-demand skill and the foundation for any data analyst role regardless of industry or country.
+2. Excel remains a core workplace tool. At 73% of SQL's demand, Microsoft Office skills are still critical in finance, operations, and reporting workflows worldwide.
 
-### 2️⃣ Excel remains a core workplace tool
+3. Python and Tableau are both essential. Companies expect data analysts to analyze data programmatically and communicate insights through visuals, making both skills equally important to develop.
 
-At 73% of SQL's demand, Microsoft Office skills are still critical in finance, operations, and reporting workflows worldwide.
-
-### 3️⃣ Python and Tableau are both essential
-
-Companies expect analysts to analyze data programmatically and communicate insights visually, making both skills equally important to develop.
-
-### 4️⃣ Power BI is more competitive globally than in the U.S.
-
- Power BI is as nearly important as Tableau at the global level, students targeting multinational companies should consider learning both visualization tools.
+4. Power BI is more competitive globally than in the U.S. Power BI is as nearly important as Tableau at the global level, students targeting multinational companies, including domestic companies will benefit a lot from having skills in both visualization tools.
 
 
 ## 3. Entry Level, Associate and Junior Data Analyst Jobs in the United States: Annual Salary and Skills
@@ -452,7 +425,7 @@ HAVING
 ORDER BY
     avg_salary DESC;
 ```
-## 📉 Output
+## Output
 
 | Job Title | Avg Salary | Min Salary | Max Salary | Job Demand | Required Skills |
 |-----------|:---------:|:---------:|:---------:|:---------:|----------------|
@@ -471,7 +444,7 @@ ORDER BY
 
 *Table showing entry-level, associate, and junior Data Analyst roles with salary ranges, job demand, and required skills (U.S., 2023–2025) · Sorted by average salary descending*
 
-## 📊 Average Yearly Salary & Range by Job Titles (U.S. 2023-2025)
+## Average Yearly Salary & Range by Job Titles (U.S. 2023-2025)
 
 ![Salary Range](assets/Data_Analyst_Salary_Range.png)
 
@@ -479,12 +452,12 @@ ORDER BY
 
 ### Here is a breakdown of annual average salary & range of entry level, associate and junior Data Analyst jobs in the United States:
 
-> - Junior Data Analyst roles average over $100,000, while Entry Level Data Analyst roles typically range between $53,000 and $68,000. This creates a potential salary gap of up to $50,000 depending on job title alone.
-> - Junior Data Analyst positions also show the widest salary range, from $35,000 to $147,000. This variation suggests that factors such as company size, industry, and technical expectations significantly influence compensation at the junior level.
-> - For students entering the job market, it is important to understand how job titles can vary across companies. Some organizations label early career analytics roles as Junior, while others use Entry Level or Associate.
-> - It is also important to distinguish between true analytics roles and positions such as Data Entry Analyst, which are primarily clerical and involve limited analytical work.
+> - Junior Data Analyst roles earn more than $100,000 per year, and Entry Level Data Analyst salaries are typically between $53,000 and $68,000. This opens one up to a potential salary gap up to $50,000 for a job title.  
+> - Junior Data Analyst: Also the largest salary range, from $35,000 to $147,000. The variability indicates that company size, industry, and technical expectations play a central role in deciding pay at the junior level.  
+> - For students entering the job market, it is important to understand how job titles can vary across companies. Some organizations label early career analytics roles as Junior, while others use Entry Level or Associate.  
+> - It is also essential to identify whether an analytics role is true or a Data Entry Analyst, which is mostly a clerical position and involves limited analytical work.
 
-## 📈 Required Skills by Job Title
+## Required Skills by Job Title
 
 | Job Title | Required Skills |
 |-----------|----------------|
@@ -513,35 +486,20 @@ ORDER BY
 
 ## 🎯 Key Takeaway
 
-### 1️⃣ "Junior" Titles Pay Significantly More Than "Entry-Level"
+1. Junior Titles Pay Much Greater Than Entry-Level Titles. Junior Data Analyst roles average $100K+ and entry-level roles average $53K–$68K. Just the title alone can equal over $30K–$40K in salary difference.
 
-Junior Data Analyst roles average $100K+, while Entry-Level roles average $53K–$68K. The title alone can represent a $30K–$40K salary difference — worth targeting when job searching.
+2. More Skills = Higher Pay. High-paying junior roles always call for a wider technical stack — Python, SQL, Tableau, plus things like Docker, Kubernetes, and TensorFlow. Going above and beyond makes for even better pay.  
 
-### 2️⃣ More Skills = Higher Pay
+3. “Data Entry Analyst” is Not a role in Data Analytics. At ~$52K requiring only Excel, PowerPoint, and Word this is a clerical position. Students should be aware of the difference when applying to these when targeting analytics roles.  
 
-Top-paying junior roles consistently require a broader technical stack — Python, SQL, and Tableau plus tools like Docker, Kubernetes, and TensorFlow. Building beyond the basics directly translates to higher compensation.
+4. Most Openings are for “Entry-Level Data Analyst.” This is new graduate’s easiest title finding 66–140 postings. And it features the most opportunities to get your early analytics job.  
 
-### 3️⃣ "Data Entry Analyst" Is Not a Data Analytics Role
+5. The Salary Floor Is Lower Than Most Expect. Certain entry-level jobs start as low as $35,000–$42,500. Always examine the min/max range -- not simply the average -- when considering offers.
 
-At ~$52K with only Excel, PowerPoint, and Word required, this is a clerical position.Students should be careful not to apply to these when targeting analytics roles.
-
-### 4️⃣ "Entry Level Data Analyst" Has the Most Openings
-
-With 66–140 postings, this is the most accessible title for new graduates. It offers the highest volume of opportunities to land your first analytics job.
-
-### 5️⃣ The Salary Floor Is Lower Than Most Expect
-
-Some entry-level roles start as low as $35,000–$42,500. Always check the min/max range — not just the average — when evaluating offers.
 
 ## 4. Optimal Skills for Entry-Level & Intern Data Roles (U.S., 2023–2025)
 
-Now that we have a comprehensive understanding of salary ranges across 
-different role levels and required skills both globally and domestically, 
-this query answers one final question for students: **which skills should 
-I learn first to maximize my chances of getting hired and getting paid well 
-in entry-level and intern data roles?**
-
-To answer this, the query combines four key metrics per skill:
+Now that we have more insight into salary ranges by job skill sets and a global/domestic need for different skill levels among them, this question addresses one last question for students: which skills should I learn first to maximize my chances of getting hired and getting paid well in entry-level and intern data roles? To help with this, the question brings those four key measurements together per skill:
 
 - Entry-level demand
 - Total market demand
@@ -549,8 +507,7 @@ To answer this, the query combines four key metrics per skill:
 - Market-wide average salary
 - Salary gap
 
-Each skill is then assigned a verdict label so students know exactly 
-where to focus their learning effort.
+Then a verdict label is assigned to each skill, letting students know exactly where to dedicate their learning effort.
 
 ```sql
 WITH skills_demand AS (
@@ -640,7 +597,7 @@ ORDER BY
     entry_level_avg_salary DESC
 LIMIT 25;
 ```
-## 📉 Output
+## Output
 
 | Skill | Entry-Level Demand | Total Market Demand | Entry-Level Avg Salary | Market Avg Salary | Salary Gap | Verdict |
 |-------|:-----------------:|:-------------------:|:----------------------:|:-----------------:|:----------:|---------|
@@ -672,7 +629,7 @@ LIMIT 25;
 
 *Table showing the top 25 optimal skills for entry-level and intern data roles in the U.S. (2023–2025), sorted by entry-level demand.*
 
-## 🎯 Demand vs. Average Salary — Entry-Level & Intern Roles (U.S.)
+## Demand vs. Average Salary — Entry-Level & Intern Roles (U.S.)
 
 ![Demand vs. Average Salary](assets/Demand_vs_Average_Salary.png)
 
@@ -686,48 +643,34 @@ LIMIT 25;
 
 ## 🎯 Key Takeaways
 
-### 1️⃣ Start With Python and SQL
+1. Start With Python and SQL. Python and SQL appear in 592 and 434 entry-level postings respectively, making them the two most common first priority skills for any students new to a data role. The bulk of entry-level requirements fall under mastering these two alone.  
 
-Python and SQL appear in 592 and 434 entry-level postings respectively, making them the two highest priority skills for any student entering a data role. Mastering these two alone covers the majority of entry-level job requirements.
+2. From Day One a Broad Foundational Stack Is Expected. Eight skills like Tableau, Excel, SAS, Java, Power BI, and R appear in 200 or more entry-level postings. Students shouldn’t get stuck with Python and SQL. In fact, employers expect a rich slate of skills at even the entry level. 
 
-### 2️⃣ A Broad Foundational Stack Is Expected From Day One
+3. More Work for Higher Pay and More Tech Stack Also Better Payment. Docker, Jenkins, C++, and Spring are $91K to $93K on average at entry level but only showcase themselves at 110 to 150 posts. These are good second-stage learning goals when the stack is a good one.  
 
-Eight skills including Tableau, Excel, SAS, Java, Power BI, and R all appear in 200 or more entry-level postings.
-Students should not stop at Python and SQL — employers expect a well-rounded skill set even at the entry level.
+4. The market salary gap measures you in terms of salaries per skill level. Each industry, regardless of skill level, pays $20K-$62K less than the median salary, meaning that the pay at entry level is nowhere near what experts of the field make for the same skill set. Students should treat the first job as a launching pad for themselves and not a salary ceiling.  
 
-### 3️⃣ Higher Pay Comes With a More Technical Stack
-
-Tools like Docker, Jenkins, C++, and Spring average $91K to $93K at entry level but appear in only 110 to 150 postings.
-These are strong second-stage learning goals once the foundational stack is solid.
-
-### 4️⃣ Every Entry-Level Salary Sits Below Market Rate
-
-Salary gaps range from $20K to $62K compared to the broader market, meaning entry-level pay is significantly lower than what experienced professionals earn for the same skills.
-Students should treat the first role as a launching pad rather than a salary ceiling.
-
-### 5️⃣ AWS and GitHub Are Worth Learning Later
-
-Both pay above $90K at entry level but appear in fewer than 70 postings, categorizing them as Advanced skills.
-Prioritize the core stack first and add cloud and version control skills once the fundamentals are covered.
+5. AWS and GitHub Are More Than Worth Learning Later. Both pay above $90K at entry level but are visible on fewer than 70 postings as Advanced skills. Get on the core stack first, build-wise cloud and version control skills once the fundamentals are covered.
 
 
-# 📚 What I Learned
+# What I Learned
 
 Throughout this project, I significantly strengthened my SQL and data analysis skills while exploring the real data analytics job market.
 
-### 🧩 Advanced SQL Query Design
+### 1. Advanced SQL Query Design
 Learned how to build complex queries using techniques such as `CTEs`, `CASE` statements, `DISTINCT ON`, and multiple `JOIN` operations to clean, filter, and combine data from several tables.
 
-### 📊 Data Aggregation and Analysis
+### 2. Data Aggregation and Analysis
 Used `GROUP BY`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, and `STRING_AGG()` to summarize large datasets and identify meaningful trends in job demand, salary ranges, and required skills.
 
-### 🧹 Data Cleaning and Deduplication
+### 3. Data Cleaning and Deduplication
 Applied PostgreSQL's `DISTINCT ON` feature to remove duplicate job postings and keep the most recent version of each job listing, ensuring the analysis reflects unique opportunities in the dataset.
 
-### 💡 Turning Questions into Data Insights
+### 4. Turning Questions into Data Insights
 Developed the ability to translate real-world career questions into structured SQL queries that reveal actionable insights about the data analytics job market.
 
-### 📈 Connecting Data to Career Strategy
+### 5. Connecting Data to Career Strategy
 Beyond writing queries, I learned how to interpret results and transform raw data into insights that help students understand which skills and roles provide the best career opportunities.
 
 
@@ -735,7 +678,7 @@ Beyond writing queries, I learned how to interpret results and transform raw dat
 
 From the analysis, several important insights emerged about the data analytics job market.
 
-### 💰 Top Paying Data Analyst Roles
+### Top Paying Data Analyst Roles
 
 The highest-paying Data Analyst roles in the United States can exceed **$500,000 per year**, particularly for senior or leadership positions such as:
 
@@ -747,7 +690,7 @@ These roles frequently appear in **technology companies, financial institutions,
 
 ---
 
-### 🛠 Skills Required for High Paying Roles
+### Skills Required for High Paying Roles
 
 Across the top-paying jobs, **SQL and Python consistently appear as core technical requirements**.
 
@@ -763,7 +706,7 @@ This suggests that top-paying analytics positions require a **combination of dat
 
 ---
 
-### 🔥 Most In-Demand Skills Worldwide
+### Most In-Demand Skills Worldwide
 
 Globally, **SQL is the most requested skill in Data Analyst job postings**, appearing in nearly **200,000 job listings**.
 
@@ -778,7 +721,7 @@ This confirms that a strong foundation in **SQL, data manipulation, and visualiz
 
 ---
 
-### 🚀 Entry-Level vs Junior Analytics Roles
+### Entry-Level vs Junior Analytics Roles
 
 Entry-level Data Analyst roles typically average between **$53,000 and $68,000**, while **Junior Data Analyst roles can average over $100,000** depending on the company and technical expectations.
 
@@ -786,7 +729,7 @@ However, job titles vary widely across organizations. Some companies label early
 
 ---
 
-### 🎯 Optimal Skills for Career Growth
+### Optimal Skills for Career Growth
 
 When balancing **salary potential and job demand**, several skills stand out as especially valuable for aspiring data professionals.
 
