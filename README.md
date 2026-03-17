@@ -59,13 +59,9 @@ The following sections explain the approach and insights generated from each ana
 Identify the Data Analyst positions with the highest pay in the United States and analyze the important factors associated with these positions. This query analyzes data from **2023 to 2025** to provide insights about some critical aspects related to high salary spots. In particular, the analysis explores:
 
 • Technical skills needed per top-paying position.
-
 • Type of work location — whether remote or on site.
-
 • If a degree is required or not explicitly mentioned.
-
 • Access to benefits of health insurance.
-
 • Salaries for the top paid roles.
 
 This query provides the users with a very clear image of **what companies expect from candidates applying for the most competitive Data Analyst positions in the U.S.** by combining salary data with job requirements and skill information.
