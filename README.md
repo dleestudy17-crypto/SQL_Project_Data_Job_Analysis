@@ -145,7 +145,7 @@ ORDER BY
 LIMIT 100;
 ```
 
-## 📊 Output
+## Output
 
 | # | Company | Job Title | Salary | Skills | Location | Degree | Health Insurance |
 |:-:|---------|-----------|:------:|--------|:--------:|:------:|:---------------:|
