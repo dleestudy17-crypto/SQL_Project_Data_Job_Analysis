@@ -388,10 +388,10 @@ The goal of this analysis is to understand how early career analytics roles diff
 
 Using job posting data from 2023 to 2025, the query calculates:
 
-- average yearly salary for each job title
-- minimum and maximum salary ranges
-- total number of job postings per title
-- aggregated technical skills required for each role
+- Average yearly salary for each job title
+- Minimum and maximum salary ranges
+- Total number of job postings per title
+- Aggregated technical skills required for each role
 
 By grouping results by job title, the analysis provides a clear comparison of how different early career analytics positions are structured in the U.S. job market.
 
